@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Dress | Live Beautifully</title>
+    <title>Let's Dress | Curated Style</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-left">
-            <img src="Logo.jpg" alt="Logo" class="logo">
-            <span class="brand-name">Let's Dress</span>
+            <div class="logo-container">
+                <img src="Logo.jpg" alt="Logo" class="logo">
+                <span class="brand-name">Let's <span class="highlight">Dress</span></span>
+            </div>
         </div>
         <ul class="nav-links">
             <li onclick="showPage('home')">Home</li>
-            <li onclick="showPage('register')">Registration</li>
+            <li onclick="showPage('register')">Join</li>
             <li onclick="showPage('login')">Login</li>
-            <li onclick="showPage('avatar')">Avatar</li>
             <li onclick="showPage('wardrobe')">Wardrobe</li>
-            <li onclick="showPage('timetable')">Time Table</li>
+            <li onclick="showPage('timetable')">Planner</li>
             <li onclick="showPage('today')">Today</li>
             <li onclick="showPage('history')">History</li>
             <li class="settings">⚙️</li>
@@ -28,38 +29,59 @@
 
     <aside class="sidebar">
         <ul>
-            <li onclick="scrollToSection('about-us')">About Us</li>
+            <li onclick="scrollToSection('about-us')">Our Story</li>
             <li onclick="scrollToSection('trends')">Trends</li>
             <li onclick="scrollToSection('styles')">Styles</li>
             <li onclick="scrollToSection('perks')">Perks</li>
         </ul>
     </aside>
 
-    <div id="home" class="page active-page" style="background-image: url('Backgroud.jpg');">
-        <div class="hero-content">
-            <h1>Come on, let's dress for live beautifully...</h1>
-            <p>Your daily companion for effortless style.</p>
-        </div>
+    <div id="home" class="page active-page">
+        <section class="hero-section">
+            <div class="hero-overlay">
+                <h1>Elegance is the only beauty that never fades.</h1>
+                <p>Sync your wardrobe with your life. Let us handle the "what to wear" while you handle the "what to achieve."</p>
+                <button class="cta-btn" onclick="showPage('register')">Get Started</button>
+            </div>
+        </section>
         
         <section id="about-us" class="info-section">
-            <h2>About Us</h2>
-            <p>We believe getting ready should be the best part of your day. Our tool helps you organize your wardrobe and matches your look to your schedule.</p>
+            <h2>Our Story</h2>
+            <p>Born from the hustle of campus life, <strong>Let's Dress</strong> was created to solve the morning "closet crisis." We help you organize your favorite pieces and match them to your busy schedule[cite: 4, 13].</p>
         </section>
 
         <section id="trends" class="info-section">
             <h2>Current Trends</h2>
-            <div class="image-grid">
-                <img src="Trend1.jpg" alt="Trend 1">
-                <img src="Trend2.jpg" alt="Trend 2">
+            <div class="content-split">
+                <img src="Trend1.jpg" alt="Trend 1" class="scaled-img">
+                <p>Sustainable fashion is leading the way this season. Think earth tones, recycled fabrics, and timeless silhouettes that transition from the lecture hall to the evening gala.</p>
+            </div>
+            <div class="content-split reverse">
+                <img src="Trend2.jpg" alt="Trend 2" class="scaled-img">
+                <p>The "Old Money" aesthetic remains a staple in Sri Lankan university fashion—crisp linens and tailored fits that command respect and radiate confidence.</p>
             </div>
         </section>
 
         <section id="styles" class="info-section">
-            <h2>Styles</h2>
-            <div class="image-grid">
-                <img src="Style1.jpg" alt="Style 1">
-                <img src="Style2.jpg" alt="Style 2">
+            <h2>Signature Styles</h2>
+            <div class="content-split">
+                <p><strong>The Academic Professional:</strong> A perfect blend of comfort and formality. Pair dark denims with a structured blouse or a crisp shirt for that "ready-for-anything" vibe.</p>
+                <img src="Style1.jpg" alt="Style 1" class="scaled-img">
             </div>
+            <div class="content-split reverse">
+                <p><strong>Weekend Casual:</strong> Soft pastels and relaxed fits. Whether it's a beach trip or a cafe study session, these styles prioritize ease without sacrificing flair.</p>
+                <img src="Style2.jpg" alt="Style 2" class="scaled-img">
+            </div>
+        </section>
+
+        <section id="perks" class="info-section perks-box">
+            <h2>Why Use Let's Dress?</h2>
+            <ul class="perks-list">
+                <li>✨ <strong>Decision Fatigue Fix:</strong> No more wasting 20 minutes every morning.</li>
+                <li>📅 <strong>Schedule Sync:</strong> Outfits that match your specific daily events[cite: 33, 34].</li>
+                <li>♻️ <strong>Wardrobe Rotation:</strong> Ensure every piece of clothing gets its time to shine.</li>
+                <li>📜 <strong>Style History:</strong> Track your best looks and avoid repeats[cite: 25].</li>
+            </ul>
         </section>
     </div>
 
@@ -69,19 +91,19 @@
             <input type="text" id="regUser" placeholder="Username">
             <input type="email" id="regEmail" placeholder="Email">
             <input type="password" id="regPass" placeholder="Password">
-            <input type="number" placeholder="Age">
             <select id="regGender">
                 <option value="">Select Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
-            <button onclick="registerUser()">Register</button>
+            <button onclick="registerUser()">Create Account</button>
         </div>
     </div>
 
     <div id="login" class="page">
         <div class="form-container red-theme">
-            <h2>Let's Dress for Live Beautifully</h2>
+            <h2>Welcome Back, Gorgeous</h2>
+            <p>Let's dress for a beautiful life...</p>
             <input type="text" id="loginUser" placeholder="Username">
             <input type="password" id="loginPass" placeholder="Password">
             <button onclick="loginUser()">Login</button>
@@ -90,25 +112,31 @@
 
     <div id="wardrobe" class="page">
         <div class="wardrobe-manager">
-            <h2>My Wardrobe</h2>
+            <h2>Your Digital Closet</h2>
             <div class="rack-section">
-                <h3>Add Clothes</h3>
+                <h3>Add New Item</h3>
                 <select id="clothCategory">
-                    <option value="frock">Frock</option>
-                    <option value="shirt">Shirt</option>
-                    <option value="blouse">Blouse</option>
+                    <option value="Frock">Frock</option>
+                    <option value="Shirt">Shirt</option>
+                    <option value="Denim">Denim</option>
+                    <option value="Blouse">Blouse</option>
                 </select>
-                <input type="text" id="clothColor" placeholder="Color">
-                <button onclick="addToWardrobe('cloth')">Add Cloth</button>
+                <input type="text" id="clothColor" placeholder="Color (e.g., Midnight Blue)">
+                <button onclick="addToWardrobe()">Add to Rack</button>
             </div>
-            <div id="display-wardrobe" class="display-area"></div>
+            <div id="display-wardrobe" class="item-grid"></div>
         </div>
     </div>
 
-    <div id="avatar" class="page"><h2>Avatar Customization (Coming Soon)</h2></div>
-    <div id="timetable" class="page"><h2>Time Table</h2><input type="date"></div>
-    <div id="today" class="page"><h2>Today's Recommendation</h2><div id="today-outfit"></div></div>
-    <div id="history" class="page"><h2>History</h2><div id="history-list"></div></div>
+    <div id="today" class="page">
+        <div class="recommendation-card">
+            <h2>Today's Selection</h2>
+            <div id="today-outfit"></div>
+        </div>
+    </div>
+
+    <div id="timetable" class="page"><h2>Event Planner</h2><p>Coming soon...</p></div>
+    <div id="history" class="page"><h2>Style History</h2><div id="history-list"></div></div>
 
     <script src="script.js"></script>
 </body>

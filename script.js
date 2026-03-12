@@ -1,64 +1,73 @@
-// Navigation Logic
+// Switch Pages
 function showPage(pageId) {
-    const pages = document.querySelectorAll('.page');
-    pages.forEach(p => p.classList.remove('active-page'));
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
     document.getElementById(pageId).classList.add('active-page');
+    
+    if(pageId === 'wardrobe') updateDisplay();
 }
 
-function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+// Scroll in Home
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
-// "Database" Logic using LocalStorage
+// User Registration [cite: 42, 43]
 function registerUser() {
     const user = document.getElementById('regUser').value;
     const pass = document.getElementById('regPass').value;
     
     if (user && pass) {
-        localStorage.setItem('currentUser', JSON.stringify({ user, pass }));
-        alert("Registration Successful! Moving to Login...");
+        localStorage.setItem('userAccount', JSON.stringify({ user, pass }));
+        alert("Account Created! Redirecting to Login...");
         showPage('login');
     } else {
-        alert("Please fill all fields.");
+        alert("Please provide both username and password.");
     }
 }
 
+// Login Logic
 function loginUser() {
     const user = document.getElementById('loginUser').value;
     const pass = document.getElementById('loginPass').value;
-    const storedUser = JSON.parse(localStorage.getItem('currentUser'));
+    const stored = JSON.parse(localStorage.getItem('userAccount'));
 
-    if (storedUser && storedUser.user === user && storedUser.pass === pass) {
+    if (stored && stored.user === user && stored.pass === pass) {
         alert("Welcome to Let's Dress!");
-        showPage('avatar');
+        showPage('wardrobe');
     } else {
-        alert("Invalid Login Credentials.");
+        alert("Invalid credentials. Please try again.");
     }
 }
 
-// Wardrobe Logic
-let wardrobe = JSON.parse(localStorage.getItem('myWardrobe')) || [];
-
-function addToWardrobe(type) {
+// Wardrobe Management
+function addToWardrobe() {
     const category = document.getElementById('clothCategory').value;
     const color = document.getElementById('clothColor').value;
 
-    if (color) {
-        wardrobe.push({ category, color });
-        localStorage.setItem('myWardrobe', JSON.stringify(wardrobe));
-        updateWardrobeDisplay();
-        alert("Added to Wardrobe!");
+    if (!color) {
+        alert("What color is this item?");
+        return;
     }
+
+    let items = JSON.parse(localStorage.getItem('wardrobe') || "[]");
+    items.push({ category, color });
+    localStorage.setItem('wardrobe', JSON.stringify(items));
+    
+    document.getElementById('clothColor').value = "";
+    updateDisplay();
 }
 
-function updateWardrobeDisplay() {
-    const display = document.getElementById('display-wardrobe');
-    display.innerHTML = wardrobe.map(item => `
-        <div class="item-card" style="background: #fff; padding: 10px; margin: 5px; border-radius: 5px;">
-            ${item.color} ${item.category}
+function updateDisplay() {
+    const area = document.getElementById('display-wardrobe');
+    let items = JSON.parse(localStorage.getItem('wardrobe') || "[]");
+    
+    area.innerHTML = items.map(item => `
+        <div class="item-card">
+            <strong>${item.category}</strong><br>
+            <small>${item.color}</small>
         </div>
     `).join('');
 }
 
-// Load wardrobe on startup
-window.onload = updateWardrobeDisplay;
+// Initial Load
+window.onload = updateDisplay;
