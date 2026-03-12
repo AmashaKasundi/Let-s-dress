@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Dress | Curated Style</title>
+    <title>Let's Dress | Style Your Life</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,65 +27,82 @@
         </ul>
     </nav>
 
-    <aside class="sidebar">
-        <ul>
-            <li onclick="scrollToSection('about-us')">Our Story</li>
-            <li onclick="scrollToSection('trends')">Trends</li>
-            <li onclick="scrollToSection('styles')">Styles</li>
-            <li onclick="scrollToSection('perks')">Perks</li>
-        </ul>
-    </aside>
-
     <div id="home" class="page active-page">
-        <section class="hero-section">
-            <div class="hero-overlay">
-                <h1>Elegance is the only beauty that never fades.</h1>
-                <p>Sync your wardrobe with your life. Let us handle the "what to wear" while you handle the "what to achieve."</p>
-                <button class="cta-btn" onclick="showPage('register')">Get Started</button>
-            </div>
-        </section>
-        
-        <section id="about-us" class="info-section">
-            <h2>Our Story</h2>
-            <p>Born from the hustle of campus life, <strong>Let's Dress</strong> was created to solve the morning "closet crisis." We help you organize your favorite pieces and match them to your busy schedule[cite: 4, 13].</p>
-        </section>
-
-        <section id="trends" class="info-section">
-            <h2>Current Trends</h2>
-            <div class="content-split">
-                <img src="Trend1.jpg" alt="Trend 1" class="scaled-img">
-                <p>Sustainable fashion is leading the way this season. Think earth tones, recycled fabrics, and timeless silhouettes that transition from the lecture hall to the evening gala.</p>
-            </div>
-            <div class="content-split reverse">
-                <img src="Trend2.jpg" alt="Trend 2" class="scaled-img">
-                <p>The "Old Money" aesthetic remains a staple in Sri Lankan university fashion—crisp linens and tailored fits that command respect and radiate confidence.</p>
-            </div>
-        </section>
-
-        <section id="styles" class="info-section">
-            <h2>Signature Styles</h2>
-            <div class="content-split">
-                <p><strong>The Academic Professional:</strong> A perfect blend of comfort and formality. Pair dark denims with a structured blouse or a crisp shirt for that "ready-for-anything" vibe.</p>
-                <img src="Style1.jpg" alt="Style 1" class="scaled-img">
-            </div>
-            <div class="content-split reverse">
-                <p><strong>Weekend Casual:</strong> Soft pastels and relaxed fits. Whether it's a beach trip or a cafe study session, these styles prioritize ease without sacrificing flair.</p>
-                <img src="Style2.jpg" alt="Style 2" class="scaled-img">
-            </div>
-        </section>
-
-        <section id="perks" class="info-section perks-box">
-            <h2>Why Use Let's Dress?</h2>
-            <ul class="perks-list">
-                <li>✨ <strong>Decision Fatigue Fix:</strong> No more wasting 20 minutes every morning.</li>
-                <li>📅 <strong>Schedule Sync:</strong> Outfits that match your specific daily events[cite: 33, 34].</li>
-                <li>♻️ <strong>Wardrobe Rotation:</strong> Ensure every piece of clothing gets its time to shine.</li>
-                <li>📜 <strong>Style History:</strong> Track your best looks and avoid repeats[cite: 25].</li>
+        <aside class="sidebar">
+            <ul>
+                <li onclick="scrollToSection('about-us')">Our Story</li>
+                <li onclick="scrollToSection('trends')">Trends</li>
+                <li onclick="scrollToSection('styles')">Styles</li>
+                <li onclick="scrollToSection('perks')">Perks</li>
             </ul>
-        </section>
+        </aside>
+
+        <div class="home-content">
+            <section class="hero-section">
+                <div class="hero-overlay">
+                    <h1>Elegance is the only beauty that never fades.</h1>
+                    <p>Sync your wardrobe with your life. Let us handle the "what to wear" while you handle the "what to achieve."</p>
+                    <button class="cta-btn" onclick="showPage('register')">Get Started</button>
+                </div>
+            </section>
+            
+            <section id="about-us" class="info-section">
+                <h2>Our Story</h2>
+                <p>Born from the fast-paced energy of university life, <strong>Let's Dress</strong> was created to transform the morning "closet crisis" into a moment of calm and creativity. We understand that as a student, your day can shift from a formal presentation to a casual study group in an instant. [cite: 4, 13]</p>
+                <p>Our mission is to empower individuals to express their best selves through fashion without the stress of decision fatigue. By organizing your digital closet, we ensure you spend less time searching and more time making an impact. [cite: 3, 6]</p>
+            </section>
+
+            <section id="trends" class="info-section">
+                <h2>Current Trends</h2>
+                <div class="content-split">
+                    <img src="Trend1.jpg" alt="Trend 1" class="scaled-img">
+                    <div class="text-block">
+                        <p>Sustainable fashion is no longer just a trend; it is a lifestyle choice. This season, we are seeing a massive shift toward "slow fashion," where quality exceeds quantity. Earthy tones like sage green, terracotta, and deep indigos are dominating the local landscape. [cite: 15]</p>
+                        <p>Incorporating vintage pieces with modern silhouettes creates a unique, personal aesthetic that stands out in the campus crowd. We encourage users to look for versatility in every piece they add to their digital wardrobe. [cite: 22]</p>
+                    </div>
+                </div>
+                <div class="content-split reverse">
+                    <img src="Trend2.jpg" alt="Trend 2" class="scaled-img">
+                    <div class="text-block">
+                        <p>The "Academic Professional" look is gaining momentum. It combines the comfort of knitwear with the structure of tailored trousers, making it the perfect choice for a student navigating both lectures and internships. [cite: 13, 26]</p>
+                        <p>Accessorizing with minimal, high-quality items is the key to elevating a simple outfit. This trend focuses on a "capsule wardrobe" approach, where a few well-chosen items can create dozens of unique combinations. [cite: 27]</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="styles" class="info-section">
+                <h2>Signature Styles</h2>
+                <div class="content-split">
+                    <div class="text-block">
+                        <h3>The Urban Professional</h3>
+                        <p>This style is designed for those who value sharp lines and a polished finish. It often features neutral palettes—blacks, whites, and greys—punctuated by a single bold accessory. It is the go-to look for presentations and formal university events. [cite: 25]</p>
+                        <p>Pairing a crisp blouse or shirt with structured denim creates a look that is both authoritative and approachable, bridging the gap between student and professional. [cite: 12]</p>
+                    </div>
+                    <img src="Style1.jpg" alt="Style 1" class="scaled-img">
+                </div>
+                <div class="content-split reverse">
+                    <div class="text-block">
+                        <h3>The Creative Soul</h3>
+                        <p>For those who view clothing as a canvas, the Creative Soul style embraces bold patterns, mixed textures, and vibrant colors. This style is about breaking rules and finding harmony in the unexpected. [cite: 16, 17]</p>
+                        <p>Layering is a fundamental part of this aesthetic, allowing for a dynamic look that can be adjusted throughout the day as temperatures and environments change. [cite: 14]</p>
+                    </div>
+                    <img src="Style2.jpg" alt="Style 2" class="scaled-img">
+                </div>
+            </section>
+
+            <section id="perks" class="info-section perks-box">
+                <h2>Why Use Let's Dress?</h2>
+                <ul class="perks-list">
+                    <li>✨ <strong>Eradicate Decision Fatigue:</strong> Reclaim your morning energy for what truly matters. [cite: 33]</li>
+                    <li>📅 <strong>Precision Scheduling:</strong> Receive outfit suggestions that match the tone of your daily events. [cite: 20]</li>
+                    <li>♻️ <strong>Maximize Your Wardrobe:</strong> Rediscover forgotten pieces and ensure your entire collection gets used. [cite: 23]</li>
+                    <li>📜 <strong>Style History:</strong> Maintain a visual diary of your best looks and avoid repetitive outfit cycles. [cite: 43]</li>
+                </ul>
+            </section>
+        </div>
     </div>
 
-    <div id="register" class="page">
+    <div id="register" class="page no-sidebar-page">
         <div class="form-container pink-theme">
             <h2>Join the Style Club</h2>
             <input type="text" id="regUser" placeholder="Username">
@@ -100,7 +117,7 @@
         </div>
     </div>
 
-    <div id="login" class="page">
+    <div id="login" class="page no-sidebar-page">
         <div class="form-container red-theme">
             <h2>Welcome Back, Gorgeous</h2>
             <p>Let's dress for a beautiful life...</p>
@@ -110,7 +127,7 @@
         </div>
     </div>
 
-    <div id="wardrobe" class="page">
+    <div id="wardrobe" class="page no-sidebar-page">
         <div class="wardrobe-manager">
             <h2>Your Digital Closet</h2>
             <div class="rack-section">
@@ -128,15 +145,15 @@
         </div>
     </div>
 
-    <div id="today" class="page">
+    <div id="today" class="page no-sidebar-page">
         <div class="recommendation-card">
             <h2>Today's Selection</h2>
             <div id="today-outfit"></div>
         </div>
     </div>
 
-    <div id="timetable" class="page"><h2>Event Planner</h2><p>Coming soon...</p></div>
-    <div id="history" class="page"><h2>Style History</h2><div id="history-list"></div></div>
+    <div id="timetable" class="page no-sidebar-page"><h2>Event Planner</h2><p>Coming soon...</p></div>
+    <div id="history" class="page no-sidebar-page"><h2>Style History</h2><div id="history-list"></div></div>
 
     <script src="script.js"></script>
 </body>
