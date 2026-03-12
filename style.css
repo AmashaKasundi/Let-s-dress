@@ -1,0 +1,66 @@
+:root {
+    --pastel-red: #FFADAD;
+    --pastel-pink: #FFD6A5;
+    --pastel-blue: #A0C4FF;
+    --pastel-purple: #BDB2FF;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: var(--pastel-purple);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.logo { height: 50px; border-radius: 50%; }
+.nav-links { display: flex; list-style: none; gap: 15px; cursor: pointer; color: white; font-weight: bold; }
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 180px;
+    height: 100vh;
+    background: var(--pastel-blue);
+    padding-top: 20px;
+}
+
+.sidebar li { padding: 15px; list-style: none; cursor: pointer; color: white; transition: 0.3s; }
+.sidebar li:hover { background: rgba(255,255,255,0.2); }
+
+/* Pages */
+.page {
+    display: none;
+    margin-left: 180px;
+    padding: 100px 40px;
+    min-height: 100vh;
+}
+
+.active-page { display: block; }
+
+/* Home Background */
+#home { background-size: cover; background-attachment: fixed; }
+.hero-content { background: rgba(255,255,255,0.7); padding: 40px; border-radius: 20px; text-align: center; }
+
+/* Form Designs */
+.form-container { width: 350px; margin: auto; padding: 40px; border-radius: 20px; }
+.pink-theme { background: var(--pastel-pink); }
+.red-theme { background: var(--pastel-red); }
+
+input, select, button { width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 8px; }
+button { background: var(--pastel-purple); color: white; cursor: pointer; font-weight: bold; }

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Dress | Live Beautifully</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="Logo.jpg" alt="Logo" class="logo">
+            <span class="brand-name">Let's Dress</span>
+        </div>
+        <ul class="nav-links">
+            <li onclick="showPage('home')">Home</li>
+            <li onclick="showPage('register')">Registration</li>
+            <li onclick="showPage('login')">Login</li>
+            <li onclick="showPage('avatar')">Avatar</li>
+            <li onclick="showPage('wardrobe')">Wardrobe</li>
+            <li onclick="showPage('timetable')">Time Table</li>
+            <li onclick="showPage('today')">Today</li>
+            <li onclick="showPage('history')">History</li>
+            <li class="settings">⚙️</li>
+        </ul>
+    </nav>
+
+    <aside class="sidebar">
+        <ul>
+            <li onclick="scrollToSection('about-us')">About Us</li>
+            <li onclick="scrollToSection('trends')">Trends</li>
+            <li onclick="scrollToSection('styles')">Styles</li>
+            <li onclick="scrollToSection('perks')">Perks</li>
+        </ul>
+    </aside>
+
+    <div id="home" class="page active-page" style="background-image: url('Backgroud.jpg');">
+        <div class="hero-content">
+            <h1>Come on, let's dress for live beautifully...</h1>
+            <p>Your daily companion for effortless style.</p>
+        </div>
+        
+        <section id="about-us" class="info-section">
+            <h2>About Us</h2>
+            <p>We believe getting ready should be the best part of your day. Our tool helps you organize your wardrobe and matches your look to your schedule.</p>
+        </section>
+
+        <section id="trends" class="info-section">
+            <h2>Current Trends</h2>
+            <div class="image-grid">
+                <img src="Trend1.jpg" alt="Trend 1">
+                <img src="Trend2.jpg" alt="Trend 2">
+            </div>
+        </section>
+
+        <section id="styles" class="info-section">
+            <h2>Styles</h2>
+            <div class="image-grid">
+                <img src="Style1.jpg" alt="Style 1">
+                <img src="Style2.jpg" alt="Style 2">
+            </div>
+        </section>
+    </div>
+
+    <div id="register" class="page">
+        <div class="form-container pink-theme">
+            <h2>Join the Style Club</h2>
+            <input type="text" id="regUser" placeholder="Username">
+            <input type="email" id="regEmail" placeholder="Email">
+            <input type="password" id="regPass" placeholder="Password">
+            <input type="number" placeholder="Age">
+            <select id="regGender">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <button onclick="registerUser()">Register</button>
+        </div>
+    </div>
+
+    <div id="login" class="page">
+        <div class="form-container red-theme">
+            <h2>Let's Dress for Live Beautifully</h2>
+            <input type="text" id="loginUser" placeholder="Username">
+            <input type="password" id="loginPass" placeholder="Password">
+            <button onclick="loginUser()">Login</button>
+        </div>
+    </div>
+
+    <div id="wardrobe" class="page">
+        <div class="wardrobe-manager">
+            <h2>My Wardrobe</h2>
+            <div class="rack-section">
+                <h3>Add Clothes</h3>
+                <select id="clothCategory">
+                    <option value="frock">Frock</option>
+                    <option value="shirt">Shirt</option>
+                    <option value="blouse">Blouse</option>
+                </select>
+                <input type="text" id="clothColor" placeholder="Color">
+                <button onclick="addToWardrobe('cloth')">Add Cloth</button>
+            </div>
+            <div id="display-wardrobe" class="display-area"></div>
+        </div>
+    </div>
+
+    <div id="avatar" class="page"><h2>Avatar Customization (Coming Soon)</h2></div>
+    <div id="timetable" class="page"><h2>Time Table</h2><input type="date"></div>
+    <div id="today" class="page"><h2>Today's Recommendation</h2><div id="today-outfit"></div></div>
+    <div id="history" class="page"><h2>History</h2><div id="history-list"></div></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
